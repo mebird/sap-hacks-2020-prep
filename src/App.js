@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import logo from './logo.svg';
 import { Header } from "./components/Header"
 import { SimpleMap } from "./pages/Maps"
 import { MainPage } from "./pages/Main"
 import { CardPage } from "./pages/Cards"
+import SearchPage from "./pages/Search"
 import './App.css';
 
 function App() {
@@ -19,7 +19,10 @@ function App() {
           <Route path={"/cards"}>
             <CardPage />
           </Route>
-          <Route path={"/"}>
+          <Route path={"/nasa"}>
+            <SearchPage />
+          </Route>
+          <Route exact path={"/"}>
             <MainPage />
           </Route>
         </Route>
