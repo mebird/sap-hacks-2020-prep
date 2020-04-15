@@ -12,6 +12,7 @@ export class MainPage extends Component {
     }
 
     render() {
+        console.log(this.state);
         return (
             <Grid container>
                 <Grid item>
@@ -29,12 +30,13 @@ export class MainPage extends Component {
                 </Grid>
                 <Grid container>
                     <Slider defaultValue={100}
-                        ariaLabelledBy={"size-slider"}
+                        aria-labeledby={"size-slider"}
                         valueLabelDisplay="auto"
                         step={10}
                         marks
                         min={0}
-                        max={100} />
+                        max={100}
+                        onChange={(event, value) => this.setState({ size: value })} />
                     <Typography id="size-slider" gutterBottom>
                         Image Size
                     </Typography>
@@ -42,12 +44,13 @@ export class MainPage extends Component {
                 <Grid container>
                     <Grid item>
                         <Slider defaultValue={100}
-                            ariaLabelledBy={"seen-slider"}
+                            aria-labeledby={"seen-slider"}
                             valueLabelDisplay="auto"
                             step={10}
                             marks
                             min={0}
-                            max={100} />
+                            max={100}
+                            onChange={(event, value) => this.setState({ opacity: value })} />
                         <Typography id="seen-slider" gutterBottom>
                             Image Visibility
                     </Typography>
