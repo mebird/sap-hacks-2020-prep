@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import Picture from '../tempAssets/sap_logo.png';
 
- 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
- 
+
 export class SimpleMap extends Component {
   static defaultProps = {
     center: {
@@ -13,7 +11,7 @@ export class SimpleMap extends Component {
     },
     zoom: 15
   };
- 
+
   render() {
     return (
       // Important! Always set the container height explicitly
