@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppBar, IconButton, Button, Grid } from '@material-ui/core'
+import { AppBar, IconButton, Button, Grid, Typography } from '@material-ui/core'
 import { MenuRounded } from "@material-ui/icons"
 
 export class Header extends Component {
@@ -11,15 +11,20 @@ export class Header extends Component {
     render() {
         return (
             <AppBar position="sticky">
-                <IconButton edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    onClick={
-                        () => this.setState((prev) => ({ showMenu: !prev.showMenu, showSubMenu: !prev.showMenu && prev.showSubMenu }))}>
-                    <MenuRounded />
-                </IconButton>
-                {this.menuBody()}
-                {this.apiMenu()}
+                <Grid container justify="center">
+                    <IconButton edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        onClick={
+                            () => this.setState((prev) => ({ showMenu: !prev.showMenu, showSubMenu: !prev.showMenu && prev.showSubMenu }))}>
+                        <MenuRounded />
+                    </IconButton>
+                    <Typography display={"inline"} style={{ width: 200, margin: 16 }}>
+                        SAP Hacks Prep 2020
+                </Typography>
+                    {this.menuBody()}
+                    {this.apiMenu()}
+                </Grid>
             </AppBar>
         );
     }
@@ -53,7 +58,7 @@ export class Header extends Component {
     renderSubMenu = (children) => {
         const rootUrl = window.location.origin;
         return (
-            <AppBar position="static" color="secondary">
+            <AppBar position="static" color="inherit">
                 {children.map(c => <Button href={`${rootUrl}/${c.path}`}>{c.name}</Button>)}
             </AppBar>
         )
