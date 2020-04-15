@@ -22,7 +22,7 @@ function App() {
           <Route path={"/nasa"}>
             <SearchPage />
           </Route>
-          <Route path={"/"}>
+          <Route exact path={"/"}>
             <MainPage />
           </Route>
         </Route>
