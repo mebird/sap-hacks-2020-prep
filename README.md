@@ -1,6 +1,6 @@
 ## Members
 
-- Maja Evans
+- M Evans
 - Nick Wong
 - Sam Ip
 - Alice Kim
